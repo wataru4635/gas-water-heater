@@ -181,18 +181,11 @@
   font-size: 14px;
   line-height: 1;
   color: #222222;
-  text-decoration: none;
-  transition: opacity var(--duration-base) ease;
 }
 @media (max-width: 767px) {
   .useful-contents__tag {
     padding: 6px 10px;
     font-size: 12px;
-  }
-}
-@media (any-hover: hover) {
-  .useful-contents__tag:hover {
-    opacity: 0.8;
   }
 }
 

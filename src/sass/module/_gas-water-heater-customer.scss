@@ -300,6 +300,10 @@
       transform: translateY(3px);
     }
   }
+  @media (max-width: 767px) {
+    width: 100%;
+    max-width: 355px;
+  }
 }
 
 .gas-water-heater-customer__more-arrow {

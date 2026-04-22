@@ -460,8 +460,8 @@
     }
   }
   @media (max-width: 767px) {
-   width: 100%;
-   max-width: calc(100% - 16px);
+   width: calc(100% - 16px);
+   max-width: 355px;
   }
 }
 
