@@ -1,0 +1,623 @@
+@use "global" as *;
+
+.gas-water-heater-cost {
+  padding-block: 64px;
+  background: linear-gradient(180deg, #F0F8FF 0%, #FFFFFF 100%);
+
+  @media (max-width: 767px) {
+    padding-block: 40px;
+  }
+}
+
+.gas-water-heater-cost__inner.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  @media (max-width: 767px) {
+    gap: 32px;
+  }
+}
+
+.gas-water-heater-cost__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.gas-water-heater-cost__title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.gas-water-heater-cost__title {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 30px;
+  line-height: 1.5;
+  color: #222222;
+
+  @media (max-width: 767px) {
+    font-size: 24px;
+  }
+}
+
+.gas-water-heater-cost__badge {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--main-blue);
+
+  @media (max-width: 767px) {
+    font-size: 13px;
+  }
+}
+
+.gas-water-heater-cost__lead {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: 18px;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  color: #222222;
+
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
+}
+
+.gas-water-heater-cost__breakdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  padding-bottom: 18px;
+}
+
+.gas-water-heater-cost__breakdown-title {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 24px;
+  line-height: 1.5;
+  color: #222222;
+  text-align: center;
+
+  @media (max-width: 767px) {
+    font-size: 18px;
+  }
+}
+
+
+
+.gas-water-heater-cost__breakdown-img {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  object-fit: contain;
+  @media (max-width: 767px) {
+   width: 80%;
+   margin-inline: auto;
+  }
+}
+
+.gas-water-heater-cost__items {
+  display: none;
+  list-style: none;
+
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-top: 16px;
+  }
+}
+
+.gas-water-heater-cost__items-item {
+  display: flex;
+  width: 100%;
+}
+
+.gas-water-heater-cost__item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 16px 12px 12px;
+  background-color: var(--white);
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+}
+
+.gas-water-heater-cost__item--benefit {
+  flex-direction: column;
+  padding: 0;
+  gap: 0;
+  background-color: #FFFAF3;
+  border-color: #FFCA89;
+  overflow: hidden;
+}
+
+.gas-water-heater-cost__item-img {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+}
+
+.gas-water-heater-cost__item-img--benefit {
+  width: 60px;
+  height: 60px;
+}
+
+.gas-water-heater-cost__item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  flex-grow: 1;
+  padding-top: 4px;
+}
+
+.gas-water-heater-cost__item-head {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.gas-water-heater-cost__item-title {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--main-blue);
+}
+
+.gas-water-heater-cost__item-title--benefit {
+  font-size: 16px;
+  color: #222222;
+}
+
+.gas-water-heater-cost__item-percent {
+  display: inline-flex;
+  align-items: baseline;
+  color: var(--main-blue);
+}
+
+.gas-water-heater-cost__item-percent-label {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.gas-water-heater-cost__item-percent-value {
+  font-family: "Inter", var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.gas-water-heater-cost__item-percent-unit {
+  font-family: "Inter", var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 16px;
+  line-height: 1;
+}
+
+.gas-water-heater-cost__item-price {
+  font-family: "Inter", var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 22px;
+  line-height: 1.5;
+  color: #1B2475;
+}
+
+.gas-water-heater-cost__item-price-unit {
+  font-size: 16px;
+}
+
+.gas-water-heater-cost__item-note {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: 12px;
+  line-height: 1.5;
+  color: #222222;
+}
+
+.gas-water-heater-cost__item-badge {
+  align-self: flex-start;
+  padding: 4px 8px 6px;
+  background-color: rgba(253, 139, 0, 0.2);
+  border-radius: 0 0 8px 0;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 12px;
+  line-height: 1;
+  color: #FD8B00;
+}
+
+.gas-water-heater-cost__item-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px 12px;
+  width: 100%;
+}
+
+.gas-water-heater-cost__item-amount {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gas-water-heater-cost__item-amount-value {
+  font-family: "Inter", var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 24px;
+  line-height: 1;
+  color: #222222;
+}
+
+.gas-water-heater-cost__item-amount-unit {
+  font-size: 16px;
+}
+
+.gas-water-heater-cost__item-free {
+  padding: 4px 8px;
+  background-color: #E90E28;
+  border-radius: 999px;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 12px;
+  line-height: 1;
+  color: var(--white);
+}
+
+.gas-water-heater-cost__plans {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 32px;
+  background-color: var(--white);
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+
+  @media (max-width: 767px) {
+    padding: 20px 16px;
+    gap: 16px;
+  }
+}
+
+.gas-water-heater-cost__plans-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.gas-water-heater-cost__plans-title {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 20px;
+  line-height: 1.5;
+  color: #222222;
+
+  @media (max-width: 767px) {
+    font-size: 18px;
+  }
+}
+
+.gas-water-heater-cost__plans-lead {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: 14px;
+  line-height: 1.5;
+  color: #6A7282;
+
+  @media (max-width: 767px) {
+    font-size: 13px;
+  }
+}
+
+.gas-water-heater-cost__plans-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  list-style: none;
+
+  @media (max-width: 767px) {
+    gap: 20px;
+  }
+}
+
+.gas-water-heater-cost__plan {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gas-water-heater-cost__plan-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.gas-water-heater-cost__plan-name {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 16px;
+  line-height: 1.5;
+  color: #222222;
+
+  @media (max-width: 767px) {
+    font-size: 13px;
+  }
+}
+
+.gas-water-heater-cost__plan-price {
+  font-family: "Inter", var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.gas-water-heater-cost__plan-price-value {
+  font-size: 18px;
+
+  @media (max-width: 767px) {
+    font-size: 13px;
+  }
+}
+
+.gas-water-heater-cost__plan-price-unit {
+  font-size: 14px;
+  margin-left: 2px;
+
+  @media (max-width: 767px) {
+    font-size: 11px;
+  }
+}
+
+.gas-water-heater-cost__plan-price--green {
+  color: #5FA978;
+}
+
+.gas-water-heater-cost__plan-price--blue {
+  color: var(--main-blue);
+}
+
+.gas-water-heater-cost__plan-price--orange {
+  color: #FFA800;
+}
+
+.gas-water-heater-cost__plan-bar {
+  position: relative;
+  width: 100%;
+  height: 48px;
+  background-color: #F3F4F6;
+  background-image:
+    linear-gradient(to right, #E5E7EB, #E5E7EB),
+    linear-gradient(to right, #E5E7EB, #E5E7EB),
+    linear-gradient(to right, #E5E7EB, #E5E7EB),
+    linear-gradient(to right, #E5E7EB, #E5E7EB),
+    linear-gradient(to right, #E5E7EB, #E5E7EB),
+    linear-gradient(to right, #E5E7EB, #E5E7EB);
+  background-size: 1px 100%;
+  background-position: 16.666% 0, 32.5% 0, 48.5% 0, 65% 0, 81.5% 0, 98.7% 0;
+  background-repeat: no-repeat;
+  border-radius: 999px;
+  overflow: hidden;
+
+  @media (max-width: 767px) {
+    background-position: 16.666% 0, 31% 0, 47% 0, 63% 0, 79% 0, 98% 0;
+    height: 28px;
+  }
+}
+
+.gas-water-heater-cost__plan-bar-fill {
+  position: absolute;
+  top: 0;
+  left: var(--plan-bar-start);
+  width: calc(var(--plan-bar-end) - var(--plan-bar-start));
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 12px;
+  border-radius: 999px;
+  box-sizing: border-box;
+
+  @media (max-width: 767px) {
+    left: var(--plan-bar-start-sp, var(--plan-bar-start));
+    width: calc(var(--plan-bar-end-sp, var(--plan-bar-end)) - var(--plan-bar-start-sp, var(--plan-bar-start)));
+    padding-inline: 8px;
+  }
+}
+
+.gas-water-heater-cost__plan-bar-fill--green {
+  background: linear-gradient(90deg, #38B763 0%, #5FA978 100%);
+}
+
+.gas-water-heater-cost__plan-bar-fill--blue {
+  background: linear-gradient(90deg, #41A6F9 0%, #2482CD 100%);
+}
+
+.gas-water-heater-cost__plan-bar-fill--orange {
+  background: linear-gradient(90deg, #FFC24D 0%, #FFA800 100%);
+}
+
+.gas-water-heater-cost__plan-bar-label {
+  font-family: "Inter", var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--white);
+  white-space: nowrap;
+
+  @media (max-width: 767px) {
+    font-size: 11px;
+  }
+}
+
+.gas-water-heater-cost__plan-bar-label-tilde {
+    font-size: 14px;
+    @media (max-width: 767px) {
+    font-size: 9px;
+    }
+}
+
+.gas-water-heater-cost__plans-scale {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  list-style: none;
+  font-family: "Inter", var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 12px;
+  line-height: 1.5;
+  color: #6A7282;
+  padding-right: 6px;
+
+  @media (max-width: 767px) {
+    font-size: 10px;
+  }
+}
+
+.gas-water-heater-cost__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 36px;
+  width: 100%;
+  padding: 24px 24px 44px;
+  background-color: #F0F8FF;
+  border-radius: 16px;
+
+  @media (max-width: 767px) {
+    gap: 24px;
+    padding: 20px 16px 32px;
+  }
+}
+
+.gas-water-heater-cost__cta-body {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+.gas-water-heater-cost__cta-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.gas-water-heater-cost__cta-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gas-water-heater-cost__cta-heading {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--main-blue);
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
+}
+
+.gas-water-heater-cost__cta-desc {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #222222;
+
+  @media (max-width: 767px) {
+    font-size: 13px;
+  }
+}
+
+.gas-water-heater-cost__cta-button {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 480px;
+  margin-inline: auto;
+  padding: 14px 32px;
+  background-color: var(--main-orange);
+  border-radius: 8px;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.20);
+  text-decoration: none;
+  transition: transform var(--duration-base) ease, box-shadow var(--duration-base) ease;
+
+  @media (max-width: 767px) {
+    padding: 12px 32px;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: none;
+      transform: translateY(3px);
+    }
+  }
+}
+
+.gas-water-heater-cost__cta-button-icon {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.gas-water-heater-cost__cta-button-text {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 22px;
+  color: var(--white);
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
+}
+
+.gas-water-heater-cost__cta-button-arrow {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 13px;
+
+  @media (max-width: 767px) {
+    width: 8px;
+    height: 12px;
+  }
+}

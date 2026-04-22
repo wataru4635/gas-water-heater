@@ -1,0 +1,256 @@
+@use "global" as *;
+
+.gas-water-heater-maker {
+  background-color: var(--white);
+  padding-block: 64px;
+
+  @media (max-width: 767px) {
+    padding-block: 40px;
+  }
+}
+
+.gas-water-heater-maker__inner.inner {
+  @media (min-width: 768px) {
+    max-width: 1240px;
+  }
+}
+
+.gas-water-heater-maker__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.gas-water-heater-maker__title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.gas-water-heater-maker__title {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 30px;
+  line-height: 1.5;
+  color: #222222;
+
+  @media (max-width: 767px) {
+    font-size: 22px;
+  }
+}
+
+.gas-water-heater-maker__badge {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--main-blue);
+
+  @media (max-width: 767px) {
+    font-size: 13px;
+  }
+}
+
+.gas-water-heater-maker__lead {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: 18px;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  color: #222222;
+
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
+}
+
+.gas-water-heater-maker__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+  list-style: none;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 32px;
+  }
+}
+
+.gas-water-heater-maker__cards-item {
+  display: flex;
+}
+
+.gas-water-heater-maker__card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--white);
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  overflow: hidden;
+  @media (max-width: 767px) {
+    border-radius: 10px;
+  }
+}
+
+.gas-water-heater-maker__card-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 16px 24px;
+  background-color: #F0F8FF;
+}
+
+.gas-water-heater-maker__card-logo {
+  width: 110px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.gas-water-heater-maker__card-name {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 22px;
+  line-height: 1.5;
+  color: #222222;
+}
+
+.gas-water-heater-maker__card-tagline {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--main-blue);
+}
+
+.gas-water-heater-maker__card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 16px;
+  padding: 24px;
+}
+
+.gas-water-heater-maker__card-desc {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  color: #222222;
+}
+
+.gas-water-heater-maker__card-points {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  list-style: none;
+}
+
+.gas-water-heater-maker__card-point {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.gas-water-heater-maker__card-point-icon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  background: url("../images/gas-water-heater/gas-water-heater-maker-check.svg") no-repeat center / contain;
+}
+
+.gas-water-heater-maker__card-point-text {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 14px;
+  line-height: 1.5;
+  color: #222222;
+}
+
+.gas-water-heater-maker__card-footer {
+  display: flex;
+  justify-content: center;
+  padding: 0 16px 16px;
+}
+
+.gas-water-heater-maker__card-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 225px;
+  height: 40px;
+  background-color: var(--main-navy-blue);
+  border-radius: 5px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  transition: transform var(--duration-base) ease, box-shadow var(--duration-base) ease;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    max-width: 358px;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: none;
+      transform: translateY(3px);
+    }
+  }
+}
+
+.gas-water-heater-maker__card-btn-text {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 16px;
+  line-height: 1;
+  color: var(--white);
+}
+
+.gas-water-heater-maker__card-btn-arrow {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  width: 9px;
+  height: 9px;
+  background: url("../images/gas-water-heater/gas-water-heater-arrow-white.svg") no-repeat center / contain;
+}
+
+.gas-water-heater-maker__note {
+  margin-top: 16px;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  color: #222222;
+  text-align: center;
+
+  @media (max-width: 767px) {
+    text-align: left;
+  }
+}
+
+.gas-water-heater-maker__note-em {
+  color: var(--main-blue);
+}
+
+.gas-water-heater-maker__note-link {
+  color: var(--main-blue);
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
+}

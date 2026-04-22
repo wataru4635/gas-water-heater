@@ -1,0 +1,475 @@
+@use "global" as *;
+
+.gas-water-heater-case {
+  padding-block: 64px;
+  background-color: #FFFFFF;
+
+  @media (max-width: 767px) {
+    padding-block: 40px;
+  }
+}
+
+.gas-water-heater-case__inner.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+
+  @media (max-width: 767px) {
+    gap: 24px;
+    padding-inline: 10px;
+  }
+}
+
+.gas-water-heater-case__head {
+  text-align: center;
+  @media (max-width: 767px) {
+    padding-inline: 6px;
+  }
+}
+
+.gas-water-heater-case__title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.gas-water-heater-case__title {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 30px;
+  line-height: 1.5;
+  color: #222222;
+
+  @media (max-width: 767px) {
+    font-size: 24px;
+  }
+}
+
+.gas-water-heater-case__lead {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: 18px;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  color: #222222;
+
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
+}
+
+.gas-water-heater-case__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  width: 100%;
+  list-style: none;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.gas-water-heater-case__card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  @media (max-width: 767px) {
+    padding: 14px 10px;
+  }
+}
+
+.gas-water-heater-case__card-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.gas-water-heater-case__card-category {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 15px;
+  background-color: var(--main-blue);
+  border-radius: 31px;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 14px;
+  line-height: 1.45;
+  color: #FFFFFF;
+}
+
+.gas-water-heater-case__card-title {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 22px;
+  line-height: 1.45;
+  color: var(--main-blue);
+
+  @media (max-width: 767px) {
+    font-size: 18px;
+  }
+}
+
+.gas-water-heater-case__card-images {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-block: 16px;
+}
+
+.gas-water-heater-case__card-image {
+  position: relative;
+  flex: 1;
+  aspect-ratio: 220 / 300;
+  border-radius: 4px;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.7) 100%);
+    pointer-events: none;
+  }
+}
+
+.gas-water-heater-case__card-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gas-water-heater-case__card-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 30px;
+  padding: 6px 10px;
+  font-family: "Inter", var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 17px;
+  line-height: 1.21;
+  color: #FFFFFF;
+  letter-spacing: 0.02em;
+  @media (max-width: 767px) {
+    width: 70px;
+    height: 24px;
+    padding: 4px 8px;
+    font-size: 14px;
+    line-height: 1.33;
+  }
+}
+
+.gas-water-heater-case__card-label--before {
+  background-color: #6A7282;
+}
+
+.gas-water-heater-case__card-label--after {
+  background-color: #FFA800;
+}
+
+.gas-water-heater-case__card-model {
+  position: absolute;
+  left: 50%;
+  top: 88%;
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.gas-water-heater-case__card-model-name {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 14px;
+  line-height: 1.5;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+.gas-water-heater-case__card-image--after .gas-water-heater-case__card-model-name {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #FFA800;
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+.gas-water-heater-case__card-model-note {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 11px;
+  line-height: 1.6;
+
+  @media (min-width: 768px) {
+    font-size: 12px;
+  }
+}
+
+.gas-water-heater-case__card-time {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 110px;
+  height: 44px;
+  padding: 0 14px;
+  isolation: isolate;
+  white-space: nowrap;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #FFA800;
+    z-index: 2;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    border-width: 37px 0 37px 50px;
+    left: calc(100% - 20px);
+    top: 50%;
+    transform: translateY(-50%);
+    border-style: solid;
+    border-color: transparent transparent transparent #FFA800;
+    z-index: 1;
+  }
+
+  @media (max-width: 767px) {
+    width: 80px;
+    height: 33px;
+    padding: 0 10px;
+
+    &::after {
+      left: calc(100% - 12px);
+      border-width: 25px 0 25px 35px;
+    }
+  }
+}
+
+.gas-water-heater-case__card-time-text {
+  position: relative;
+  z-index: 3;
+  font-family: "Inter", var(--font-family-base);
+  font-weight: var(--font-weight-extrabold);
+  font-size: 18px;
+  line-height: 1;
+  color: #222222;
+  letter-spacing: 0.08em;
+
+  @media (max-width: 767px) {
+    font-size: 14px;
+    padding-left: 5px;
+  }
+}
+
+.gas-water-heater-case__card-time-text--3h {
+  padding-left: 10px;
+}
+
+.gas-water-heater-case__card-summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-block: 2px;
+  background-color: #FFFFFF;
+  border-block: 1px solid var(--main-blue);
+
+  @media (max-width: 767px) {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+}
+
+.gas-water-heater-case__card-summary-label {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 20px;
+  background-color: var(--main-blue);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-normal);
+  font-size: 14px;
+  line-height: 1.36;
+  color: #FFFFFF;
+
+  @media (max-width: 767px) {
+    padding: 4px 6px;
+    font-size: 12px;
+  }
+}
+
+.gas-water-heater-case__card-summary-item {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.gas-water-heater-case__card-summary-name {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 14px;
+  color: var(--main-blue);
+  @media (max-width: 767px) {
+    font-size: 12px;
+  }
+}
+
+.gas-water-heater-case__card-summary-value {
+  font-family: "Inter", var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 14px;
+  color: #222222;
+  @media (max-width: 767px) {
+    font-size: 12px;
+  }
+}
+
+.gas-water-heater-case__card-summary-unit {
+  margin-left: 2px;
+  font-family: "Inter", var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 12px;
+  line-height: 1;
+  color: #222222;
+  @media (max-width: 767px) {
+    font-size: 10px;
+  }
+}
+
+.gas-water-heater-case__card-customer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-block: 24px;
+
+  @media (max-width: 767px) {
+    padding-block: 16px;
+  }
+}
+
+.gas-water-heater-case__card-customer-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gas-water-heater-case__card-stars {
+  display: block;
+  width: 116px;
+  height: 20px;
+  flex-shrink: 0;
+  @media (max-width: 767px) {
+    width: 96px;
+    height: auto;
+  }
+}
+
+.gas-water-heater-case__card-customer-info {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: 12px;
+  line-height: 1.5;
+  color: #6A7282;
+}
+
+.gas-water-heater-case__card-comment {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: 14px;
+  line-height: 1.7;
+  color: #222222;
+}
+
+.gas-water-heater-case__card-features {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  list-style: none;
+}
+
+.gas-water-heater-case__card-feature {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  background-color: #D4EAFB;
+  border-radius: 9999px;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: 12px;
+  line-height: 1;
+  color: var(--main-blue);
+}
+
+.gas-water-heater-case__more {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 355px;
+  max-width: 100%;
+  height: 40px;
+  padding: 0 24px;
+  background-color: var(--main-navy-blue);
+  border-radius: 5px;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 16px;
+  line-height: 1;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: transform var(--duration-base) ease, box-shadow var(--duration-base) ease;
+
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: none;
+      transform: translateY(3px);
+    }
+  }
+  @media (max-width: 767px) {
+   width: 100%;
+   max-width: calc(100% - 16px);
+  }
+}
+
+.gas-water-heater-case__more-arrow {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 13px;
+}

@@ -1,0 +1,7 @@
+.vscode/
+_gulp/node_modules/
+_gulp/package-lock.json/
+.cursor/
+02-image-export/
+.DS_Store
+dist

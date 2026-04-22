@@ -1,0 +1,349 @@
+@use "global" as *;
+
+.gas-water-heater-flow {
+  background: linear-gradient(180deg, #F0F8FF 0%, #FFFFFF 100%);
+  padding-block: 64px;
+
+  @media (max-width: 767px) {
+    padding-block: 40px;
+  }
+}
+
+.gas-water-heater-flow__inner.inner {
+  @media (min-width: 768px) {
+    max-width: 1230px;
+  }
+}
+
+.gas-water-heater-flow__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.gas-water-heater-flow__title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.gas-water-heater-flow__title {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 30px;
+  line-height: 1.5;
+  color: #222222;
+
+  @media (max-width: 767px) {
+    font-size: 22px;
+  }
+}
+
+.gas-water-heater-flow__badge {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--main-blue);
+
+  @media (max-width: 767px) {
+    font-size: 13px;
+  }
+}
+
+.gas-water-heater-flow__lead {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: 18px;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  color: #222222;
+
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
+}
+
+.gas-water-heater-flow__steps {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 40px;
+  margin: 40px auto 0;
+  width: fit-content;
+  max-width: 100%;
+  list-style: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 168px;
+    left: 120px;
+    right: 120px;
+    height: 2px;
+    background-color: #E5E7EB;
+    z-index: 0;
+  }
+
+  @media (max-width: 767px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 12px;
+    margin: 32px 0 0;
+    width: 100%;
+
+    &::before {
+      top: 24%;
+      translate: 0 -50%;
+      right: calc(0px - var(--padding-sp));
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 74%;
+      translate: 0 -50%;
+      left: calc(0px - var(--padding-sp));
+      right: 48px;
+      height: 2px;
+      background-color: #E5E7EB;
+      z-index: 0;
+    }
+  }
+}
+
+.gas-water-heater-flow__step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 240px;
+  z-index: 1;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    max-width: 172px;
+    justify-self: center;
+    gap: 12px;
+  }
+}
+
+.gas-water-heater-flow__step-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+
+  @media (max-width: 767px) {
+    flex-grow: 1;
+    gap: 8px;
+  }
+}
+
+.gas-water-heater-flow__step-head-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+
+  @media (max-width: 767px) {
+    gap: 6px;
+    justify-content: flex-start;
+  }
+}
+
+.gas-water-heater-flow__step-badge {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  width: 46px;
+  aspect-ratio: 1 / 1;
+  background-color: var(--main-blue);
+  border-radius: calc(infinity * 1px);
+  z-index: 1;
+
+  @media (max-width: 767px) {
+    width: clamp(36px, calc(38 * 100 / var(--cq-ref-mobile) * 1cqi), 38px);
+  }
+}
+
+.gas-water-heater-flow__step-badge-icon {
+  width: 16px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+
+  @media (max-width: 767px) {
+    width: clamp(12px, calc(14 * 100 / var(--cq-ref-mobile) * 1cqi), 14px);
+  }
+}
+
+.gas-water-heater-flow__step-badge-num {
+  font-family: "Inter", sans-serif;
+  font-weight: var(--font-weight-bold);
+  font-size: 14px;
+  line-height: 1;
+  color: var(--white);
+
+  @media (max-width: 767px) {
+    font-size: clamp(10px, calc(12 * 100 / var(--cq-ref-mobile) * 1cqi), 12px);
+  }
+}
+
+.gas-water-heater-flow__step-heading {
+  display: flex;
+  flex-direction: column;
+}
+
+.gas-water-heater-flow__step-tag {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  color: var(--main-blue);
+
+  @media (max-width: 767px) {
+    font-size: clamp(10px, calc(12 * 100 / var(--cq-ref-mobile) * 1cqi), 12px);
+  }
+}
+
+.gas-water-heater-flow__step-title {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 20px;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  color: #101828;
+
+  @media (max-width: 767px) {
+    font-size: clamp(14px, calc(16 * 100 / var(--cq-ref-mobile) * 1cqi), 16px);
+  }
+}
+
+.gas-water-heater-flow__step-photo {
+  position: relative;
+  width: 196px;
+  z-index: 1;
+
+  @media (max-width: 767px) {
+    width: 140px;
+  }
+}
+
+.gas-water-heater-flow__step-photo-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.gas-water-heater-flow__step-desc {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  color: #222222;
+
+  @media (max-width: 767px) {
+    font-size: clamp(11px, calc(13 * 100 / var(--cq-ref-mobile) * 1cqi), 13px);
+  }
+}
+
+.gas-water-heater-flow__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 40px;
+
+  @media (max-width: 767px) {
+    margin-top: 32px;
+  }
+}
+
+.gas-water-heater-flow__cta-button {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 480px;
+  padding: 14px 32px 16px 56px;
+  background-color: var(--main-orange);
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  transition: transform var(--duration-base) ease, box-shadow var(--duration-base) ease;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    max-width: 358px;
+    padding: 14px 28px 16px 28px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: none;
+      transform: translateY(3px);
+    }
+  }
+}
+
+.gas-water-heater-flow__cta-icon {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.gas-water-heater-flow__cta-text {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 22px;
+  line-height: 1;
+  color: var(--white);
+
+  @media (max-width: 767px) {
+    font-size: clamp(18px, calc(20 * 100 / var(--cq-ref-mobile) * 1cqi), 20px);
+  }
+}
+
+.gas-water-heater-flow__cta-arrow {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 13px;
+
+  @media (max-width: 767px) {
+    width: 8px;
+    height: 12px;
+  }
+}
+
+.gas-water-heater-flow__cta-note {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4A5565;
+
+  @media (max-width: 767px) {
+    font-size: 12px;
+  }
+}

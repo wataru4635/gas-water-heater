@@ -1,0 +1,77 @@
+@use "sass:math";
+
+// インナー幅設定
+// コンテンツのインナー幅（最も共通の幅が多い部分）
+$inner: 1100px;
+// ※キュンパス幅ではなくインナーの幅を指す
+
+// 余白
+
+:root {
+  --padding-pc: 15px;
+  --padding-sp: 16px;
+}
+
+// 全体の幅
+:root {
+
+  --max-width: 1030px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --max-width: 500px;
+  }
+}
+
+:root {
+  --cq-ref: 1440px;
+}
+
+////////////////////
+// フォント設定
+////////////////////
+
+:root {
+  --font-family-base: "Noto Sans JP", sans-serif;
+}
+// ※検証ツールでしっかり反映されているか確認する
+
+
+// フォントウェイト
+:root {
+  --font-weight-regular: 400;
+  --font-weight-normal: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+}
+
+// モバイルのベース幅
+:root {
+  --fluid-basis-mobile: (100vw - 340px) / (375 - 340);
+  --cq-ref-mobile: 390;
+}
+
+////////////////////
+// 色の指定
+////////////////////
+
+//色指定（共通性のあるものは出来る限り指定すると良い）
+:root {
+  --black: #000;
+  --white: #fff;
+  --main-navy-blue: #1B2475;
+  --main-blue: #2482CD;
+  --main-orange: #F26202;
+}
+
+////////////////////
+// アニメーション設定
+///////////////////
+
+:root {
+  --duration-short: 0.2s;
+  --duration-base: 0.3s;
+}

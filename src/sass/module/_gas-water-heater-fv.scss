@@ -1,0 +1,257 @@
+@use "global"as *;
+
+.gas-water-heater-fv {
+  height: auto;
+  width: 100%;
+  background: url('../images/gas-water-heater/gas-water-heater-fv-bg-sp.webp') no-repeat center center / cover;
+
+  @media (max-width: 767px) {
+    padding-top: 12px;
+    padding-bottom: 70px;
+  }
+
+  @media (min-width: 768px) {
+    min-width: 1100px;
+    height: 600px;
+    background: url('../images/gas-water-heater/gas-water-heater-fv-bg.webp') no-repeat center center / cover;
+  }
+}
+
+.gas-water-heater-fv__inner {
+  display: grid;
+  gap: 20px;
+  height: 100%;
+  padding-inline: 16px;
+  margin-inline: auto;
+  max-width: 400px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 604fr 645fr;
+    gap: 10px;
+    max-width: 1260px;
+    padding-inline: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.gas-water-heater-fv__left-img {
+  height: auto;
+  width: 100%;
+  object-fit: contain;
+}
+
+.gas-water-heater-fv__right {
+  margin-top: 40px;
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.gas-water-heater-fv__right-img {
+  height: auto;
+  width: 100%;
+  object-fit: contain;
+}
+
+.gas-water-heater-fv__links {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 15px;
+  width: 100%;
+  margin-top: 20px;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+  }
+}
+
+.gas-water-heater-fv__link {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex: 1.5 1 0;
+  min-width: 0;
+  height: 60px;
+  padding-inline: 20px 32px;
+  border-radius: 8px;
+  background-color: var(--main-orange);
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  transition: transform var(--duration-base) ease, box-shadow var(--duration-base) ease;
+
+  @media (max-width: 767px) {
+    flex: none;
+    width: 100%;
+    max-width: 358px;
+    padding-inline: 32px;
+    box-shadow: 0 4px 8px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    width: 10px;
+    height: 13px;
+    transform: translateY(-50%);
+    background: url("../images/gas-water-heater/gas-water-heater-arrow-white.svg") no-repeat center / contain;
+    pointer-events: none;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: none;
+      transform: translateY(3px);
+    }
+  }
+}
+
+.gas-water-heater-fv__link-icon {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  background: url("../images/gas-water-heater/gas-water-heater-fv-link-camera.svg") no-repeat center / contain;
+
+  @media (max-width: 767px) {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.gas-water-heater-fv__link-text {
+  font-family: "Inter", sans-serif;
+  font-weight: var(--font-weight-bold);
+  font-size: clamp(18px, 1.7vw, 22px);
+  line-height: 1;
+  color: var(--white);
+
+  @media (max-width: 767px) {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+}
+
+.gas-water-heater-fv__tel-link {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 232px;
+  height: 61px;
+  padding-inline: 16px 24px;
+  border-radius: 8px;
+  background-color: var(--white);
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  transition: transform var(--duration-base) ease, box-shadow var(--duration-base) ease;
+
+  @media (max-width: 767px) {
+    flex: none;
+    width: 100%;
+    max-width: 358px;
+    height: 66px;
+    gap: 2px;
+    padding-inline: 32px;
+    border: 2px solid #182166;
+    box-shadow: 0 4px 8px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    width: 10px;
+    height: 13px;
+    transform: translateY(-50%);
+    background: url("../images/gas-water-heater/gas-water-heater-fv-tel-arrow-navy.svg") no-repeat center / contain;
+    pointer-events: none;
+
+    @media (max-width: 767px) {
+      right: 16px;
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: none;
+      transform: translateY(3px);
+    }
+  }
+}
+
+.gas-water-heater-fv__tel-link-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.gas-water-heater-fv__tel-link-icon {
+  flex-shrink: 0;
+  width: 23px;
+  height: 15px;
+  background: url("../images/gas-water-heater/gas-water-heater-fv-tel-freedial.svg") no-repeat center / contain;
+
+  @media (max-width: 767px) {
+    width: 30px;
+    height: 18px;
+  }
+}
+
+.gas-water-heater-fv__tel-link-number {
+font-family: "Inter", sans-serif;
+  font-weight: var(--font-weight-bold);
+  font-size: clamp(18px, 1.7vw, 21px);
+  line-height: 1;
+  color: #182166;
+
+  @media (max-width: 767px) {
+    font-size: 22px;
+    line-height: 1.27;
+    letter-spacing: -0.02em;
+  }
+}
+
+.gas-water-heater-fv__tel-link-text {
+  font-family: "Inter", sans-serif;
+  font-weight: var(--font-weight-normal);
+  font-size: 10px;
+  line-height: 1;
+  color: #182166;
+
+  @media (max-width: 767px) {
+    font-size: 12px;
+    line-height: 1.33;
+  }
+}
+
+
+.gas-water-heater-fv-example-sp {
+  display: none;
+
+  @media (max-width: 767px) {
+    display: block;
+    overflow-x: clip;
+    margin-top: max(-60px, -14%);
+  }
+}
+
+.gas-water-heater-fv-example-sp__img {
+  width: 102%;
+  height: auto;
+  object-fit: contain;
+  max-width: 400px;
+  margin-inline: auto;
+}

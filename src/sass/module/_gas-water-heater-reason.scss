@@ -1,0 +1,160 @@
+@use "global" as *;
+
+.gas-water-heater-reason {
+  background-color: var(--white);
+  padding-block: 64px;
+
+  @media (max-width: 767px) {
+    padding-block: 40px;
+  }
+}
+
+.gas-water-heater-reason__inner.inner {
+  @media (min-width: 768px) {
+    max-width: 1230px;
+  }
+}
+
+.gas-water-heater-reason__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.gas-water-heater-reason__title {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 30px;
+  line-height: 1.5;
+  color: #222222;
+
+  @media (max-width: 767px) {
+    font-size: 22px;
+  }
+}
+
+.gas-water-heater-reason__lead {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: 18px;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  color: #222222;
+
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
+}
+
+.gas-water-heater-reason__catch {
+  margin-top: 32px;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 22px;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  color: var(--main-blue);
+  text-align: center;
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
+}
+
+.gas-water-heater-reason__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+  list-style: none;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.gas-water-heater-reason__cards-item {
+  display: flex;
+}
+
+.gas-water-heater-reason__card {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  width: 100%;
+  padding: 16px 16px 24px;
+  background-color: var(--white);
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+}
+
+.gas-water-heater-reason__card-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+}
+
+.gas-water-heater-reason__card-icon-img {
+  width: 100%;
+  height: 100%;
+}
+
+.gas-water-heater-reason__card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.gas-water-heater-reason__card-title {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+  color: #101828;
+
+  @media (max-width: 767px) {
+    font-size: 17px;
+  }
+}
+
+.gas-water-heater-reason__card-title--lh-sm {
+  line-height: 1.2;
+}
+
+.gas-water-heater-reason__card-title-marker {
+  background: linear-gradient(transparent 65%, rgba(255, 168, 0, 0.5) 65%);
+}
+
+.gas-water-heater-reason__card-title-marker--lg {
+  font-size: 24px;
+
+  @media (max-width: 767px) {
+    font-size: 20px;
+  }
+}
+
+.gas-water-heater-reason__card-title-em {
+  font-size: 28px;
+
+  @media (max-width: 767px) {
+    font-size: 22px;
+  }
+}
+
+.gas-water-heater-reason__card-desc {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  color: #222222;
+}
