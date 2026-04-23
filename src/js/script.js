@@ -1,49 +1,49 @@
   /* ===============================================
-  # アニメーション
+  # タブ切り替え
   // =============================================== */
-  function observeElements(selector, activeClass = "is-active") {
-    const elements = document.querySelectorAll(selector);
+  function setupTabs(navItemSelector, panelSelector, navItemCurrentClass, panelCurrentClass) {
+    const navItems = document.querySelectorAll(navItemSelector);
+    const panels = document.querySelectorAll(panelSelector);
+    if (!navItems.length || !panels.length) return;
 
-    function handleIntersect(entries, observer) {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add(activeClass);
-          observer.unobserve(entry.target);
-        }
-      });
-    }
-
-    const observer = new IntersectionObserver(handleIntersect);
-    
-    // 発火が早い場合：要素の20%が表示されたときに発火
-    // const observer = new IntersectionObserver(handleIntersect, {
-    //   threshold: 0.2
-    // });
-
-    elements.forEach((element) => observer.observe(element));
-  }
-
-  // 使い方例
-  observeElements(".js-fade-in");
-  observeElements(".js-clip-img");
-  observeElements(".js-scaleImg");
-
-  // =======================
-  // 文字を1文字ずつ <span> に分割
-  // =======================
-  function wrapTextInSpans(selector) {
-    document.querySelectorAll(selector).forEach(element => {
-      const text = element.textContent;
-      element.setAttribute('aria-label', text);
-      element.setAttribute('role', 'text');
-      element.textContent = '';
-      [...text].forEach((char, index) => {
-        const span = document.createElement('span');
-        span.textContent = char;
-        span.style.setProperty('--index', index);
-        span.setAttribute('aria-hidden', 'true');
-        element.appendChild(span);
+    navItems.forEach((navItem, index) => {
+      const button = navItem.querySelector("button");
+      if (!button) return;
+      button.addEventListener("click", () => {
+        navItems.forEach((item) => item.classList.remove(navItemCurrentClass));
+        panels.forEach((panel) => panel.classList.remove(panelCurrentClass));
+        navItem.classList.add(navItemCurrentClass);
+        if (panels[index]) panels[index].classList.add(panelCurrentClass);
       });
     });
   }
-  wrapTextInSpans(".js-text-split");
+
+  setupTabs(
+    ".js-beginner-guide-tab",
+    ".js-beginner-guide-panel",
+    "gas-water-heater-beginner-guide__nav-item--current",
+    "gas-water-heater-beginner-guide__panel--current"
+  );
+
+  /* ===============================================
+  # アコーディオン
+  // =============================================== */
+  function setupAccordion(triggerSelector, bodySelector, openClass) {
+    const triggers = document.querySelectorAll(triggerSelector);
+    if (!triggers.length) return;
+
+    triggers.forEach((trigger) => {
+      const item = trigger.parentElement;
+      if (!item) return;
+      const body = item.querySelector(bodySelector);
+      if (!body) return;
+
+      trigger.addEventListener("click", () => {
+        const isOpen = item.classList.toggle(openClass);
+        trigger.setAttribute("aria-expanded", String(isOpen));
+        body.style.maxHeight = isOpen ? body.scrollHeight + "px" : "0";
+      });
+    });
+  }
+
+  setupAccordion(".js-sign-trigger", ".js-sign-body", "is-open");

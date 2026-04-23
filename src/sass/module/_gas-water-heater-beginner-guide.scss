@@ -117,7 +117,16 @@
   width: 100%;
   padding: 12px 24px 12px 16px;
   background-color: #E5E7EB;
+  border: none;
   border-radius: 136px;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  appearance: none;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .gas-water-heater-beginner-guide__nav-item--current .gas-water-heater-beginner-guide__nav-button {
@@ -128,6 +137,42 @@
   flex-shrink: 0;
   width: 18px;
   height: 18px;
+  background-color: #9D9FA3;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+
+.gas-water-heater-beginner-guide__nav-icon--01 {
+  -webkit-mask-image: url("../images/gas-water-heater/gas-water-heater-beginner-guide-tab-icon_01.svg");
+          mask-image: url("../images/gas-water-heater/gas-water-heater-beginner-guide-tab-icon_01.svg");
+}
+
+.gas-water-heater-beginner-guide__nav-icon--02 {
+  -webkit-mask-image: url("../images/gas-water-heater/gas-water-heater-beginner-guide-tab-icon_02.svg");
+          mask-image: url("../images/gas-water-heater/gas-water-heater-beginner-guide-tab-icon_02.svg");
+}
+
+.gas-water-heater-beginner-guide__nav-icon--03 {
+  -webkit-mask-image: url("../images/gas-water-heater/gas-water-heater-beginner-guide-tab-icon_03.svg");
+          mask-image: url("../images/gas-water-heater/gas-water-heater-beginner-guide-tab-icon_03.svg");
+}
+
+.gas-water-heater-beginner-guide__nav-icon--04 {
+  -webkit-mask-image: url("../images/gas-water-heater/gas-water-heater-beginner-guide-tab-icon_04.svg");
+          mask-image: url("../images/gas-water-heater/gas-water-heater-beginner-guide-tab-icon_04.svg");
+}
+
+.gas-water-heater-beginner-guide__nav-icon--05 {
+  -webkit-mask-image: url("../images/gas-water-heater/gas-water-heater-beginner-guide-tab-icon_05.svg");
+          mask-image: url("../images/gas-water-heater/gas-water-heater-beginner-guide-tab-icon_05.svg");
+}
+
+.gas-water-heater-beginner-guide__nav-item--current .gas-water-heater-beginner-guide__nav-icon {
+  background-color: var(--white);
 }
 
 .gas-water-heater-beginner-guide__nav-text {
@@ -150,12 +195,16 @@
   width: 16px;
   height: 10px;
   transform: translateX(-50%);
-  background: url("../images/gas-water-heater/gas-water-heater-beginner-guide-tab-arrow.svg") no-repeat center / contain;
+  background: url("../images/gas-water-heater/gas-water-heater-beginner-guide-tab-arrow-gray.svg") no-repeat center / contain;
   pointer-events: none;
 }
 
+.gas-water-heater-beginner-guide__nav-item--current .gas-water-heater-beginner-guide__nav-arrow {
+  background-image: url("../images/gas-water-heater/gas-water-heater-beginner-guide-tab-arrow.svg");
+}
+
 .gas-water-heater-beginner-guide__panel {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 24px;
   width: 100%;
@@ -168,6 +217,10 @@
     padding: 20px 10px;
     gap: 20px;
   }
+}
+
+.gas-water-heater-beginner-guide__panel--current {
+  display: flex;
 }
 
 .gas-water-heater-beginner-guide__panel-head {
@@ -327,6 +380,472 @@
   font-size: 14px;
   line-height: 1.5;
   color: #222222;
+}
+
+.gas-water-heater-beginner-guide__capacity-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  list-style: none;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.gas-water-heater-beginner-guide__capacity-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 16px;
+  background-color: #F5F6F8;
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+}
+
+.gas-water-heater-beginner-guide__capacity-card-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  margin-top: 20px;
+}
+
+.gas-water-heater-beginner-guide__capacity-card-number {
+  margin-top: 12px;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 24px;
+  line-height: 1.5;
+  color: var(--main-blue);
+}
+
+.gas-water-heater-beginner-guide__capacity-card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  gap: 4px;
+  margin-top: 12px;
+  margin-inline: 24px;
+}
+
+.gas-water-heater-beginner-guide__capacity-card-label {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #222222;
+  text-align: center;
+}
+
+.gas-water-heater-beginner-guide__capacity-card-tag {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 12px;
+  background-color: #D4EAFB;
+  border-radius: 9999px;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 12px;
+  line-height: 1;
+  color: var(--main-blue);
+}
+
+.gas-water-heater-beginner-guide__capacity-card-desc {
+  align-self: stretch;
+  margin-top: 8px;
+  margin-inline: 16px;
+  padding: 12px 16px;
+  background-color: var(--white);
+  border-radius: 8px;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 14px;
+  line-height: 1.5;
+  color: #222222;
+  text-align: center;
+}
+
+.gas-water-heater-beginner-guide__cost-table {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.gas-water-heater-beginner-guide__cost-table-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+}
+
+.gas-water-heater-beginner-guide__cost-table-row--head {
+  padding: 12px 16px;
+  background-color: #F5F6F8;
+}
+
+.gas-water-heater-beginner-guide__cost-table-row--zebra {
+  background-color: rgba(245, 246, 248, 0.4);
+}
+
+.gas-water-heater-beginner-guide__cost-table-row--total {
+  background-color: #F0F8FF;
+  border-top: 1px solid var(--main-blue);
+}
+
+.gas-water-heater-beginner-guide__cost-table-th {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 14px;
+  line-height: 1.43;
+  color: #222222;
+}
+
+.gas-water-heater-beginner-guide__cost-table-th--right {
+  text-align: right;
+}
+
+.gas-water-heater-beginner-guide__cost-table-cell {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  gap: 4px;
+  min-width: 0;
+}
+
+.gas-water-heater-beginner-guide__cost-table-cell-title {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 16px;
+  line-height: 1.5;
+  color: #1E2939;
+}
+
+.gas-water-heater-beginner-guide__cost-table-cell-note {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: 12px;
+  line-height: 1.5;
+  color: #222222;
+  @media (max-width: 767px) {
+    font-size: 11px;
+  }
+}
+
+.gas-water-heater-beginner-guide__cost-table-price {
+  flex-shrink: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: var(--font-weight-bold);
+  font-size: 18px;
+  line-height: 1.11;
+  color: #1E2939;
+  text-align: right;
+  white-space: nowrap;
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
+}
+
+.gas-water-heater-beginner-guide__cost-table-unit {
+  font-family: var(--font-family-base);
+  font-size: 12px;
+  @media (max-width: 767px) {
+    font-size: 10px;
+  }
+}
+
+.gas-water-heater-beginner-guide__cost-table-unit--total {
+  font-size: 16px;
+  @media (max-width: 767px) {
+    font-size: 13px;
+  }
+}
+
+.gas-water-heater-beginner-guide__cost-table-total-label {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 14px;
+  line-height: 1.71;
+  color: var(--main-blue);
+}
+
+.gas-water-heater-beginner-guide__cost-table-total-value {
+  flex-shrink: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: var(--font-weight-bold);
+  font-size: 20px;
+  line-height: 27px;
+  color: var(--main-blue);
+  text-align: right;
+  white-space: nowrap;
+  @media (max-width: 767px) {
+    font-size: 16px;
+    line-height: 1.35;
+  }
+}
+
+.gas-water-heater-beginner-guide__flow-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  list-style: none;
+}
+
+.gas-water-heater-beginner-guide__flow-step {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background-color: #F5F6F8;
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+
+  @media (max-width: 767px) {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  &:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    width: 16px;
+    height: 12px;
+    margin-left: -8px;
+    background: url("../images/gas-water-heater/gas-water-heater-beginner-guide-flow-arrow.svg") no-repeat center / contain;
+    pointer-events: none;
+  }
+}
+
+.gas-water-heater-beginner-guide__flow-step-icon {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  background-color: var(--main-blue);
+  border-radius: 50%;
+  @media (max-width: 767px) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.gas-water-heater-beginner-guide__flow-step-icon-img {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  @media (max-width: 767px) {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.gas-water-heater-beginner-guide__flow-step-icon-num {
+  font-family: "Inter", sans-serif;
+  font-weight: var(--font-weight-bold);
+  font-size: 14px;
+  line-height: 1.14;
+  color: var(--white);
+  @media (max-width: 767px) {
+    font-size: 12px;
+  }
+}
+
+.gas-water-heater-beginner-guide__flow-step-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  gap: 4px;
+  min-width: 0;
+  padding-right: 88px;
+
+  @media (max-width: 767px) {
+    padding-right: 0;
+  }
+}
+
+.gas-water-heater-beginner-guide__flow-step-title {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  color: #101828;
+
+  @media (max-width: 767px) {
+    font-size: 13px;
+  }
+}
+
+.gas-water-heater-beginner-guide__flow-step-text {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  color: #222222;
+
+  @media (max-width: 767px) {
+    font-size: 13px;
+  }
+}
+
+.gas-water-heater-beginner-guide__flow-step-tag {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 12px;
+  background-color: #D4EAFB;
+  border-radius: calc(infinity * 1px);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 12px;
+  line-height: 1;
+  color: var(--main-blue);
+
+  @media (max-width: 767px) {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+}
+
+.gas-water-heater-beginner-guide__sign-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+
+  @media (max-width: 767px) {
+    gap: 12px;
+  }
+}
+
+.gas-water-heater-beginner-guide__sign-item {
+  background-color: #F5F6F8;
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.gas-water-heater-beginner-guide__sign-item-trigger {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 16px;
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  @media (max-width: 767px) {
+    padding: 12px;
+  }
+}
+
+.gas-water-heater-beginner-guide__sign-item-num {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.gas-water-heater-beginner-guide__sign-item-title {
+  flex: 1 1 auto;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  color: #101828;
+
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
+}
+
+.gas-water-heater-beginner-guide__sign-item-icon {
+  position: relative;
+  flex-shrink: 0;
+  display: block;
+  width: 24px;
+  height: 24px;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: var(--main-blue);
+    transition: transform var(--duration-base) ease;
+  }
+
+  &::before {
+    width: 14px;
+    height: 2px;
+    transform: translate(-50%, -50%);
+  }
+
+  &::after {
+    width: 2px;
+    height: 14px;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.gas-water-heater-beginner-guide__sign-item.is-open .gas-water-heater-beginner-guide__sign-item-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.gas-water-heater-beginner-guide__sign-item-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--duration-base) ease;
+}
+
+.gas-water-heater-beginner-guide__sign-item-body-inner {
+  padding: 0 16px 16px 16px;
+
+  @media (max-width: 767px) {
+    padding: 0 12px 12px 12px;
+  }
+}
+
+.gas-water-heater-beginner-guide__sign-item-text {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  color: #101828;
+
+  @media (max-width: 767px) {
+    font-size: 13px;
+  }
 }
 
 .gas-water-heater-beginner-guide__tip {
